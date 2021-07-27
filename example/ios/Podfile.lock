@@ -1,0 +1,29 @@
+PODS:
+  - Flutter (1.0.0)
+  - native_downloader (0.0.1):
+    - Flutter
+    - Tiercel
+  - Tiercel (3.2.2)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - native_downloader (from `.symlinks/plugins/native_downloader/ios`)
+
+SPEC REPOS:
+  trunk:
+    - Tiercel
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  native_downloader:
+    :path: ".symlinks/plugins/native_downloader/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  native_downloader: 830fd4675551cd69d754288d8a65d5a844088c04
+  Tiercel: 8827f8c2fa90067e377e30666521eef6b3a79232
+
+PODFILE CHECKSUM: 324709033fdbc1fa744dac75dde748e9cf475d50
+
+COCOAPODS: 1.10.0
