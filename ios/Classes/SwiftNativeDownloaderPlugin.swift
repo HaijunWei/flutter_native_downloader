@@ -110,6 +110,7 @@ public class SwiftNativeDownloaderPlugin: NSObject, FlutterPlugin {
         let completely = arguments["completely"] as! Bool
         let tasks = session.tasks
         tasks.forEach { session.remove($0, completely: completely) }
+        result(nil)
     }
     
     func exists(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
