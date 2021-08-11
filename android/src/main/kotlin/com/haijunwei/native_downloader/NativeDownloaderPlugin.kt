@@ -1,5 +1,6 @@
 package com.haijunwei.native_downloader
 
+import android.util.Log
 import androidx.annotation.NonNull
 import com.arialyy.aria.core.Aria
 import com.arialyy.aria.core.download.DownloadEntity
@@ -146,7 +147,7 @@ class NativeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   private fun syncStatus(@NonNull result: Result) {
-    Aria.download(listener).taskList.forEach {
+    Aria.download(listener).taskList?.forEach {
       updateTaskStatus(it)
     }
     result.success(null)
