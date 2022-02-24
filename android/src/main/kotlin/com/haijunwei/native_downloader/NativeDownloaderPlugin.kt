@@ -82,7 +82,7 @@ class NativeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
     if (fileName == null) {
       fileName = url!!.substring(url.lastIndexOf("/"))
     }
-    Aria.download(listener).load(url).setFilePath("$rootPath/$fileName").create()
+    Aria.download(listener).load(url).setFilePath("$rootPath/$fileName").ignoreCheckPermissions().create()
     result.success(true)
   }
 
@@ -96,7 +96,7 @@ class NativeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
       } else {
         fileNames[i]
       }
-      Aria.download(listener).load(url).setFilePath("$rootPath/$fileName").create()
+      Aria.download(listener).load(url).setFilePath("$rootPath/$fileName").ignoreCheckPermissions().create()
     }
     result.success(true)
   }
