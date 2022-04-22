@@ -104,28 +104,28 @@ class NativeDownloaderPlugin: FlutterPlugin, MethodCallHandler {
   private fun start(@NonNull call: MethodCall, @NonNull result: Result) {
     val url: String? = call.argument("url")
     val task = Aria.download(listener).getFirstDownloadEntity(url)
-    Aria.download(listener).load(task.id).resume()
+    Aria.download(listener).load(task.id).ignoreCheckPermissions().resume()
     result.success(null)
   }
 
   private fun suspend(@NonNull call: MethodCall, @NonNull result: Result) {
     val url: String? = call.argument("url")
     val task = Aria.download(listener).getFirstDownloadEntity(url)
-    Aria.download(listener).load(task.id).stop()
+    Aria.download(listener).load(task.id).ignoreCheckPermissions().stop()
     result.success(null)
   }
 
   private fun cancel(@NonNull call: MethodCall, @NonNull result: Result) {
     val url: String? = call.argument("url")
     val task = Aria.download(listener).getFirstDownloadEntity(url)
-    Aria.download(listener).load(task.id).cancel()
+    Aria.download(listener).load(task.id).ignoreCheckPermissions().cancel()
     result.success(null)
   }
 
   private fun remove(@NonNull call: MethodCall, @NonNull result: Result) {
     val url: String? = call.argument("url")
     val task = Aria.download(listener).getFirstDownloadEntity(url)
-    Aria.download(listener).load(task.id).cancel()
+    Aria.download(listener).load(task.id).ignoreCheckPermissions().cancel()
     result.success(null)
   }
 
